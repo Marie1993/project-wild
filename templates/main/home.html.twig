@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="new-member-form">
+        <h2>Ajouter un(e) Argonaute</h2>
+        {{ form_start(argonautForm) }}
+        {{ form_widget(argonautForm) }}
+        <button>Envoyer</button>
+        {{ form_end(argonautForm) }}
+    </section>
+
+    <section>
+        <h2>Membres de l'équipage</h2>
+        <div id="list">
+            {% for argonaut in argonauts|sort((a, b) => a.name <=> b.name) %}
+                <div class="member-item">{{ argonaut.name }}</div>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}
