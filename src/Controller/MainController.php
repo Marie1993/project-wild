@@ -26,7 +26,7 @@ class MainController extends AbstractController
         $argonaut = new Argonauts();
         $argonautForm = $this->createForm(ArgonautsType::class, $argonaut);
 
-        //traiter form
+        //traitement du formulaire
         $argonautForm->handleRequest($request);
 
         if($argonautForm->isSubmitted()){
@@ -36,7 +36,7 @@ class MainController extends AbstractController
             $this->addFlash('succes','Bienvenue !');
         }
 
-        //affichage  liste des argonauts
+        //affichage de la liste des argonauts
         $argonauts = $argonautsRepository->findAll();
 
         return $this->render('main/home.html.twig', [
