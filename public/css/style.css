@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+a {
+    text-decoration : none;
+    color: black;
+
+}
+
+a:hover {
+    color: #f76c6c;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -32,12 +42,29 @@ h1, h2 {
 
 label {
     display: block;
-    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
 }
+select {
+    width: 170px;
+ }
 
 .new-member-form {
-    margin: 2em 0 4em 0;
+    width: 170px;
+    padding-bottom: 2em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn-form{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.flash {
     text-align: center;
+    color: #f76c6c;
+    font-size: large;
+    margin-bottom: 0.2em;
 }
 
 .member-item {
@@ -59,6 +86,20 @@ label {
     background-color: #f4f4f4;
 
 
+}
+
+.section-profil {
+    background: #f4f4f4;
+    width: 30em;
+    height: 18em;
+    margin: auto;
+    border-radius: 25px;
+    padding-top: 60px;
+}
+
+.item-profil {
+    margin-left: 9em;
+    margin-top: 30px;
 }
 
 #col {

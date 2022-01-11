@@ -1,0 +1,21 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1> Argonaut n° {{ argonaut.id }}</h1>
+        <div class="section-profil">
+            <div class="item-profil"> Prenom : {{ argonaut.name }}</div>
+            <div class="item-profil"> Statut : {{ argonaut.role }}</div>
+            <div class="item-profil"> Date d'inscription : {{ argonaut.dateCreated|date('d-m-Y') }}</div>
+
+            <a href="{{asset(path('delete', {'id': argonaut.id})) }}">
+            <button class="btn-form">Supprimer</button></a>
+
+            <a href="{{asset(path('update', {'id': argonaut.id})) }}">
+                <button class="btn-form">Modifier</button></a>
+
+        </div>
+{% endblock %}

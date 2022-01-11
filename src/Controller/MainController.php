@@ -24,6 +24,7 @@ class MainController extends AbstractController
     {
 
         $argonaut = new Argonauts();
+        $argonaut->setDateCreated(new \DateTime());
         $argonautForm = $this->createForm(ArgonautsType::class, $argonaut);
 
         //traitement du formulaire
@@ -33,13 +34,14 @@ class MainController extends AbstractController
             $entityManager->persist($argonaut);
             $entityManager->flush();
 
-            $this->addFlash('succes','Bienvenue !');
+            $this->addFlash('succes','Bienvenue parmis nous ');
         }
 
         //affichage de la liste des argonauts
         $argonauts = $argonautsRepository->findAll();
 
         return $this->render('main/home.html.twig', [
+            "argonaut" => $argonaut,
             "argonauts" => $argonauts,
             'argonautForm' => $argonautForm->createView()
         ]);

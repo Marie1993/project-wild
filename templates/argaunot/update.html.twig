@@ -1,0 +1,20 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+
+{% block body %}
+
+    <h2>Modification de l'Argonaute</h2>
+    <section class="new-member-form">
+
+        {{ form_start(updateForm) }}
+        {{ form_widget(updateForm) }}
+        <button class="btn-form">Envoyer</button>
+        {{ form_end(updateForm) }}
+    </section>
+
+{% endblock %}

@@ -1,19 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <h2>Ajouter un(e) Argonaute</h2>
     <section class="new-member-form">
-        <h2>Ajouter un(e) Argonaute</h2>
+
         {{ form_start(argonautForm) }}
         {{ form_widget(argonautForm) }}
-        <button>Envoyer</button>
+        <button class="btn-form">Envoyer</button>
         {{ form_end(argonautForm) }}
     </section>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }}">
+                {{ message }} {{ argonaut.name }} !
+            </div>
+        {% endfor %}
+    {% endfor %}
 
     <section>
         <h2>Membres de l'équipage</h2>
         <div id="list">
             {% for argonaut in argonauts|sort((a, b) => a.name <=> b.name) %}
-                <div class="member-item">{{ argonaut.name }}</div>
+                <div class="member-item">
+                    <a href="{{asset(path('argaunot', {'id': argonaut.id} )) }}" >
+                        {{ argonaut.name }}
+                    </a> // {{ argonaut.role }}
+                </div>
             {% endfor %}
         </div>
 
